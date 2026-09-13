@@ -63,30 +63,30 @@ export const Navbar: React.FC = () => {
           {/* Left: Brand Wordmark (Shrink-0, Never Wrapped) */}
           <a
             href="#"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg shrink-0"
+            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg shrink-0"
           >
-            <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-accent-soft border border-border-card group-hover:border-accent/60 transition-colors duration-300">
+            <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-accent-soft border border-border-card group-hover:border-accent/60 transition-colors duration-300 shrink-0">
               <Shield className="w-4.5 h-4.5 text-accent stroke-[1.75]" />
               <div className="absolute inset-0 rounded-xl bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="flex flex-col">
-              <span className="text-[17px] tracking-[0.2em] font-normal text-text-primary group-hover:text-accent transition-colors leading-tight">
+              <span className="text-[16px] sm:text-[17px] tracking-[0.2em] font-normal text-text-primary group-hover:text-accent transition-colors leading-tight">
                 SENTINEL
               </span>
-              <span className="text-[10px] tracking-[0.25em] text-text-muted font-light uppercase mt-0.5">
+              <span className="text-[9.5px] sm:text-[10px] tracking-[0.25em] text-text-muted font-light uppercase mt-0.5 hidden min-[400px]:block">
                 Professional Travel Support
               </span>
             </div>
           </a>
 
           {/* Center: Desktop Navigation Items (Centered, Single-Line Whitespace-Nowrap, Equal Height) */}
-          <div className="hidden xl:flex items-center justify-center flex-1">
-            <ul className="flex items-center gap-1 xl:gap-2">
+          <div className="hidden xl:flex items-center justify-center flex-1 px-4 min-w-0">
+            <ul className="flex items-center gap-1 2xl:gap-2">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="h-10 px-3.5 flex items-center justify-center rounded-lg text-[14.5px] font-normal text-text-secondary hover:text-accent hover:bg-accent-soft/50 transition-all duration-200 whitespace-nowrap leading-none"
+                    className="h-9 px-3 2xl:px-3.5 flex items-center justify-center rounded-lg text-[13.5px] 2xl:text-[14px] font-normal text-text-secondary hover:text-accent hover:bg-accent-soft/50 transition-all duration-200 whitespace-nowrap leading-none"
                   >
                     {link.label}
                   </a>
@@ -95,8 +95,8 @@ export const Navbar: React.FC = () => {
             </ul>
           </div>
 
-          {/* Right Action CTAs: Theme Toggle, Sign In, Primary Action */}
-          <div className="hidden sm:flex items-center gap-3.5 shrink-0">
+          {/* Right Action CTAs (Desktop XL+ Only: Theme Toggle, Sign In, Primary Action) */}
+          <div className="hidden xl:flex items-center gap-2.5 2xl:gap-3.5 shrink-0">
             {/* Theme Toggle Button (Secondary) */}
             <button
               type="button"
@@ -115,7 +115,7 @@ export const Navbar: React.FC = () => {
             {/* Sign In (Secondary Action) */}
             <button
               type="button"
-              className="text-[14px] font-normal text-text-secondary hover:text-text-primary px-3 py-2 rounded-lg transition-colors cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+              className="text-[13.5px] 2xl:text-[14px] font-normal text-text-secondary hover:text-text-primary px-2.5 2xl:px-3 py-1.5 rounded-lg transition-colors cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent whitespace-nowrap shrink-0"
             >
               Sign In
             </button>
@@ -125,20 +125,20 @@ export const Navbar: React.FC = () => {
               <Button
                 variant="primary"
                 size="sm"
-                icon={<ArrowUpRight className="w-3.5 h-3.5" />}
-                className="whitespace-nowrap text-[14px] font-medium"
+                icon={<ArrowUpRight className="w-3.5 h-3.5 shrink-0" />}
+                className="whitespace-nowrap text-[13.5px] 2xl:text-[14px] font-medium shrink-0 px-3.5 2xl:px-4 py-2"
               >
                 Find a Security Professional
               </Button>
             </a>
           </div>
 
-          {/* Mobile/Tablet Controls: Theme Toggle & Hamburger */}
-          <div className="flex xl:hidden items-center gap-2.5">
+          {/* Mobile/Tablet Controls (< XL: Theme Toggle & Hamburger) */}
+          <div className="flex xl:hidden items-center gap-2 shrink-0">
             <button
               type="button"
               onClick={toggleTheme}
-              className="flex items-center justify-center w-9 h-9 rounded-full bg-background-surface border border-border-card text-text-secondary hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="flex items-center justify-center w-9 h-9 rounded-full bg-background-surface border border-border-card text-text-secondary hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent shrink-0"
               aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
               title={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
             >
@@ -152,7 +152,7 @@ export const Navbar: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="flex items-center justify-center p-2 rounded-lg text-text-secondary hover:text-text-primary bg-background-surface border border-border-card focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="flex items-center justify-center p-2 rounded-lg text-text-secondary hover:text-text-primary bg-background-surface border border-border-card focus:outline-none focus-visible:ring-2 focus-visible:ring-accent shrink-0"
               aria-label={isMobileMenuOpen ? 'Close Menu' : 'Open Menu'}
               aria-expanded={isMobileMenuOpen}
             >
@@ -164,28 +164,28 @@ export const Navbar: React.FC = () => {
         {/* Mobile Navigation Drawer */}
         {isMobileMenuOpen && (
           <div className="xl:hidden mt-3.5 rounded-2xl bg-background-surface/98 border border-border-card p-6 shadow-2xl backdrop-blur-2xl animate-in fade-in slide-in-from-top-4 duration-300">
-            <ul className="flex flex-col gap-3 pb-5 border-b border-border-subtle text-[16px] font-normal text-text-secondary">
+            <ul className="flex flex-col gap-3 pb-5 border-b border-border-card text-[15.5px] font-normal text-text-secondary">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-1.5 hover:text-accent transition-colors"
+                    className="block py-2 px-2 hover:text-accent hover:bg-accent-soft/40 rounded-lg transition-colors"
                   >
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
-            <div className="flex flex-col gap-3.5 pt-5">
+            <div className="flex flex-col gap-3 pt-5">
               <button
                 type="button"
-                className="w-full text-center py-2.5 text-[15px] font-normal text-text-secondary hover:text-text-primary rounded-lg border border-border-card bg-background-elevated"
+                className="w-full text-center py-2.5 text-[14.5px] font-normal text-text-secondary hover:text-text-primary rounded-lg border border-border-card bg-background-elevated"
               >
                 Sign In
               </button>
-              <a href="#security-professionals" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button variant="primary" size="md" className="w-full justify-center text-[15px]">
+              <a href="#security-professionals" onClick={() => setIsMobileMenuOpen(false)} className="w-full block">
+                <Button variant="primary" size="md" className="w-full justify-center text-[14.5px]">
                   Find a Security Professional
                 </Button>
               </a>

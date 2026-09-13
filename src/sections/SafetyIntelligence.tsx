@@ -3,13 +3,19 @@ import { Compass, Lightbulb, MapPin, ShieldCheck } from 'lucide-react';
 import { Container } from '../components/common/Container';
 import { Badge } from '../components/common/Badge';
 import { SafetyMapVisual } from '../components/visual/SafetyMapVisual';
-import { initSectionReveal } from '../animations/scrollAnimations';
+import { initSectionReveal, initStaggeredCards } from '../animations/scrollAnimations';
 
 export const SafetyIntelligence: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const conceptCardsRef = useRef<HTMLDivElement>(null);
+  const matrixRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     initSectionReveal(sectionRef.current);
+    initStaggeredCards(conceptCardsRef.current, '.concept-card');
+    if (matrixRef.current) {
+      initSectionReveal(matrixRef.current);
+    }
   }, []);
 
   const features = [
@@ -46,55 +52,69 @@ export const SafetyIntelligence: React.FC = () => {
       className="relative py-28 sm:py-36 overflow-hidden border-t border-border-card bg-background-surface/40 opacity-0"
     >
       <Container size="lg">
-        {/* Spacious Two-Column Layout: Left Narrative & 4 Concept Cards ↔ Right Interactive Visual */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+        {/* =========================================================
+            ZONE 1: SAFETY INTRODUCTION & SUPPORTING CONCEPT CARDS
+            ========================================================= */}
+        <div className="max-w-4xl space-y-5">
+          <Badge variant="accent">SAFETY INTELLIGENCE</Badge>
           
-          {/* Left Column: Headline, Lead Paragraph, and 2x2 Concept Cards (50% Desktop Width) */}
-          <div className="lg:col-span-6 space-y-7">
-            <Badge variant="accent">SAFETY INTELLIGENCE</Badge>
-            
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[48px] font-light text-text-primary tracking-tight leading-[1.18]">
-              Know your surroundings{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent to-accent-hover">
-                before you arrive.
-              </span>
-            </h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-light text-text-primary tracking-tight leading-[1.16]">
+            Know your surroundings{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent to-accent-hover">
+              before you arrive.
+            </span>
+          </h2>
 
-            <p className="text-lg sm:text-xl font-light text-text-secondary leading-[1.7]">
-              True safety is rooted in awareness, not fear. Sentinel is architected to combine
-              responsible, legitimate geographic data sources with certified human verification—giving you
-              an objective understanding of local environments before you step outside.
-            </p>
+          <p className="text-lg sm:text-xl font-light text-text-secondary max-w-3xl leading-[1.7]">
+            True safety is rooted in awareness, not fear. Sentinel is architected to combine
+            responsible, legitimate geographic data sources with certified human verification—giving you
+            an objective understanding of local environments before you step outside.
+          </p>
+        </div>
 
-            {/* 4 Concept Cards Arranged in a Clean, Spacious 2x2 Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-3">
-              {features.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={item.title}
-                    className="p-6 rounded-2xl bg-background-surface border border-border-card hover:border-border-card-hover hover:bg-background-elevated transition-all duration-300 shadow-sm hover:shadow-card group"
-                  >
-                    <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-accent-soft border border-border-card group-hover:border-accent/60 transition-all duration-300 mb-4">
-                      <Icon className="w-5.5 h-5.5 text-accent transition-transform duration-300 group-hover:scale-110" strokeWidth={1.75} />
-                    </div>
-                    <h4 className="text-base sm:text-[17px] font-medium text-text-primary tracking-normal mb-2 group-hover:text-accent transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-[14.5px] sm:text-[15px] font-light text-text-secondary leading-[1.65]">
-                      {item.description}
-                    </p>
+        {/* 4 Supporting Concept Cards in a Clean 2x2 Grid (Desktop/Tablet) & 1x4 Stack (Mobile) */}
+        <div
+          ref={conceptCardsRef}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mt-10 sm:mt-14"
+        >
+          {features.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.title}
+                className="concept-card p-7 sm:p-8 rounded-2xl bg-background-surface border border-border-card hover:border-accent/60 hover:bg-background-elevated transition-all duration-300 shadow-card group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-accent-soft border border-border-card group-hover:border-accent/60 transition-all duration-300 mb-5">
+                    <Icon className="w-5.5 h-5.5 text-accent transition-transform duration-300 group-hover:scale-110" strokeWidth={1.75} />
                   </div>
-                );
-              })}
-            </div>
-          </div>
+                  <h4 className="text-lg sm:text-xl font-normal text-text-primary tracking-normal mb-2.5 group-hover:text-accent transition-colors">
+                    {item.title}
+                  </h4>
+                  <p className="text-[15.5px] sm:text-[16px] font-light text-text-secondary leading-[1.68]">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
 
-          {/* Right Column: Spacious Safety Intelligence Visual Container */}
-          <div className="lg:col-span-6 mt-2 lg:mt-0">
-            <SafetyMapVisual />
+        {/* =========================================================
+            DELIBERATE TRANSITION & DIVIDER BETWEEN ZONES
+            ========================================================= */}
+        <div className="my-16 sm:my-24 relative flex items-center justify-center">
+          <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+          <div className="absolute px-4 py-1 rounded-full bg-background-surface border border-border-card text-[11px] sm:text-[12px] uppercase tracking-widest text-accent font-medium shadow-sm">
+            Live Spatial Preview
           </div>
+        </div>
 
+        {/* =========================================================
+            ZONE 2: SITUATIONAL ENVIRONMENTAL MATRIX (FULL WIDTH)
+            ========================================================= */}
+        <div ref={matrixRef} className="w-full">
+          <SafetyMapVisual />
         </div>
       </Container>
     </section>
