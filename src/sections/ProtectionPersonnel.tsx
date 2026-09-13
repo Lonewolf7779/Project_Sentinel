@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { BadgeCheck, UserCheck, GraduationCap, Heart, Scale, Users } from 'lucide-react';
+import { BadgeCheck, UserCheck, GraduationCap, Scale, Users, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Container } from '../components/common/Container';
 import { Badge } from '../components/common/Badge';
 import { Card } from '../components/common/Card';
@@ -43,6 +43,13 @@ export const ProtectionPersonnel: React.FC = () => {
       description:
         'Strict commitment to courteous, non-confrontational presence that respects local traditions and mitigates tension proactively.',
     },
+  ];
+
+  const verificationPoints = [
+    'Male & female professionals available on request',
+    'Mandatory civil background & biometric check',
+    'Calm de-escalation & conflict mitigation protocols',
+    'Discreet, low-profile accompaniment without intimidation',
   ];
 
   return (
@@ -104,12 +111,12 @@ export const ProtectionPersonnel: React.FC = () => {
                     {std.status}
                   </div>
 
-                  <p className="text-[15px] sm:text-[15.5px] font-light text-text-secondary leading-[1.65]">
+                  <p className="text-[16px] font-light text-text-secondary leading-[1.68]">
                     {std.description}
                   </p>
                 </div>
 
-                <div className="pt-5 mt-7 border-t border-border-card flex items-center justify-between text-[13px] text-text-muted font-normal">
+                <div className="pt-5 mt-7 border-t border-border-card flex items-center justify-between text-[13px] sm:text-[14px] text-text-muted font-normal">
                   <span>Network Requirement</span>
                   <span className="text-emerald-600 dark:text-emerald-400 font-medium">Mandatory</span>
                 </div>
@@ -118,41 +125,78 @@ export const ProtectionPersonnel: React.FC = () => {
           })}
         </div>
 
-        {/* Inclusivity & Diversity statement with Travel Imagery Context */}
-        <div className="mt-14 rounded-2xl bg-background-surface border border-border-card overflow-hidden shadow-card">
-          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
-            <div className="lg:col-span-7 p-7 sm:p-10 space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-accent-soft border border-border-card shrink-0">
-                  <Heart className="w-5 h-5 text-accent" strokeWidth={1.75} />
+        {/* Expansive Editorial Showcase: Inclusivity & Accompaniment (48/52 Balance) */}
+        <div className="mt-16 rounded-3xl bg-background-surface border border-border-card hover:border-accent/40 overflow-hidden shadow-card transition-all duration-500 group">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+            {/* Left Content Area (58% / 7 cols) */}
+            <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-between space-y-8">
+              <div className="space-y-4">
+                <div className="flex items-center gap-2.5">
+                  <Badge variant="accent">INCLUSIVE NETWORK CAPABILITY</Badge>
+                  <span className="text-[13px] text-accent font-medium hidden sm:inline">• Verified Accompaniment</span>
                 </div>
-                <div>
-                  <h4 className="text-lg sm:text-xl font-normal text-text-primary">
-                    Designed for All Travelers: Male & Female Security Professionals
-                  </h4>
-                  <span className="text-xs uppercase tracking-widest text-accent font-medium">
-                    Inclusive Safety Ethos
+
+                <h3 className="text-2xl sm:text-3xl lg:text-[34px] font-light text-text-primary tracking-tight leading-[1.22]">
+                  Accompaniment designed around your{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent to-accent-hover font-normal">
+                    comfort and dignity.
                   </span>
-                </div>
+                </h3>
+
+                <p className="text-[16px] sm:text-[17px] font-light text-text-secondary leading-[1.7] pt-1">
+                  Solo female travelers, visiting families, small excursion groups, and corporate delegations can request
+                  security professionals tailored to their personal preferences, language background, and cultural comfort.
+                  Accompaniment remains subtle, unobtrusive, and dedicated to peaceful exploration.
+                </p>
               </div>
-              <p className="text-[15px] sm:text-[16px] font-light text-text-secondary leading-[1.65] pt-2">
-                Solo female travelers, visiting families, small excursion groups, and corporate delegations can request
-                security professionals tailored to their personal preferences, language background, and cultural comfort.
-              </p>
+
+              {/* Verification Checklist Tags */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                {verificationPoints.map((point) => (
+                  <div
+                    key={point}
+                    className="flex items-start gap-2.5 p-3 rounded-xl bg-background-secondary/60 border border-border-card text-[14px] font-normal text-text-primary"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" strokeWidth={2} />
+                    <span className="leading-snug">{point}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom Reassurance Banner */}
+              <div className="pt-6 border-t border-border-card flex flex-wrap items-center justify-between gap-3 text-[13.5px] text-text-muted font-normal">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-accent" />
+                  <span>Zero-intimidation standard • Proactive situational de-escalation</span>
+                </div>
+                <span className="text-accent font-medium">14 Major Travel Regions</span>
+              </div>
             </div>
-            
-            <div className="lg:col-span-5 h-56 lg:h-full relative overflow-hidden border-t lg:border-t-0 lg:border-l border-border-card">
+
+            {/* Right Visual Area (42% / 5 cols) - Expansive, High-Resolution Indian Travel Imagery */}
+            <div className="lg:col-span-5 min-h-[380px] sm:min-h-[440px] lg:min-h-full relative overflow-hidden border-t lg:border-t-0 lg:border-l border-border-card bg-slate-900">
               <img
                 src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=1200&q=80"
                 alt="Mindful travel and urban navigation in historic Mumbai"
-                className="w-full h-full object-cover object-center brightness-95 dark:brightness-80 hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover object-center brightness-[0.98] contrast-[1.02] group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background-surface/80 via-transparent to-transparent flex items-end p-5">
-                <span className="text-[13px] text-white font-medium bg-black/60 px-3 py-1 rounded-full backdrop-blur-md border border-white/10 flex items-center gap-1.5">
+              
+              {/* Floating Top Telemetry Pill */}
+              <div className="absolute top-5 right-5 z-10 px-3.5 py-1.5 rounded-full bg-background-surface/90 dark:bg-slate-950/85 backdrop-blur-md border border-border-card shadow-sm flex items-center gap-2 text-[12.5px] font-medium text-text-primary">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Verified Accompaniment Live</span>
+              </div>
+
+              {/* Bottom Overlay with Caption */}
+              <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent flex flex-col gap-2">
+                <div className="flex items-center gap-2 text-[12px] uppercase tracking-widest text-sky-400 font-medium">
                   <Users className="w-3.5 h-3.5 text-accent" />
-                  Verified Accompaniment Across India
-                </span>
+                  <span>Network Readiness</span>
+                </div>
+                <p className="text-[14px] text-white/90 font-light leading-snug">
+                  Supporting solo travelers, couples, and visiting families with certified local security professionals.
+                </p>
               </div>
             </div>
           </div>

@@ -29,8 +29,8 @@ export const Navbar: React.FC = () => {
       gsap.to(navRef.current, {
         backgroundColor: isScrolled
           ? isDark
-            ? 'rgba(9, 11, 14, 0.92)'
-            : 'rgba(255, 255, 255, 0.92)'
+            ? 'rgba(9, 11, 14, 0.94)'
+            : 'rgba(255, 255, 255, 0.94)'
           : 'transparent',
         borderBottomColor: isScrolled
           ? isDark
@@ -57,8 +57,10 @@ export const Navbar: React.FC = () => {
       className="fixed top-0 left-0 right-0 z-50 transition-colors border-b border-transparent py-4 sm:py-4.5"
     >
       <Container size="lg">
-        <nav className="flex items-center justify-between gap-4" aria-label="Main Navigation">
-          {/* Logo / Wordmark */}
+        {/* Strictly Aligned 3-Column Navigation Grid */}
+        <nav className="flex items-center justify-between gap-6" aria-label="Main Navigation">
+          
+          {/* Left: Brand Wordmark (Shrink-0, Never Wrapped) */}
           <a
             href="#"
             className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg shrink-0"
@@ -68,36 +70,38 @@ export const Navbar: React.FC = () => {
               <div className="absolute inset-0 rounded-xl bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="flex flex-col">
-              <span className="text-base sm:text-lg tracking-[0.2em] font-normal text-text-primary group-hover:text-accent transition-colors">
+              <span className="text-[17px] tracking-[0.2em] font-normal text-text-primary group-hover:text-accent transition-colors leading-tight">
                 SENTINEL
               </span>
-              <span className="text-[10px] sm:text-[11px] tracking-[0.25em] text-text-muted font-light uppercase">
+              <span className="text-[10px] tracking-[0.25em] text-text-muted font-light uppercase mt-0.5">
                 Professional Travel Support
               </span>
             </div>
           </a>
 
-          {/* Desktop Navigation Links (Readable 15px) */}
-          <ul className="hidden lg:flex items-center gap-8 text-[15px] font-normal text-text-secondary">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  className="hover:text-text-primary transition-colors duration-200 py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-accent hover:after:w-full after:transition-all after:duration-300"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {/* Center: Desktop Navigation Items (Centered, Single-Line Whitespace-Nowrap, Equal Height) */}
+          <div className="hidden xl:flex items-center justify-center flex-1">
+            <ul className="flex items-center gap-1 xl:gap-2">
+              {navLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="h-10 px-3.5 flex items-center justify-center rounded-lg text-[14.5px] font-normal text-text-secondary hover:text-accent hover:bg-accent-soft/50 transition-all duration-200 whitespace-nowrap leading-none"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          {/* Right Action CTAs & Theme Toggle */}
+          {/* Right Action CTAs: Theme Toggle, Sign In, Primary Action */}
           <div className="hidden sm:flex items-center gap-3.5 shrink-0">
-            {/* Theme Toggle Button with Subtle Blue Border */}
+            {/* Theme Toggle Button (Secondary) */}
             <button
               type="button"
               onClick={toggleTheme}
-              className="relative flex items-center justify-center w-9 h-9 rounded-full bg-background-surface border border-border-card text-text-secondary hover:text-accent hover:border-accent/50 transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent shadow-sm"
+              className="relative flex items-center justify-center w-9 h-9 rounded-full bg-background-surface border border-border-card text-text-secondary hover:text-accent hover:border-accent/50 transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent shadow-sm shrink-0"
               aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
               title={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
             >
@@ -108,28 +112,29 @@ export const Navbar: React.FC = () => {
               )}
             </button>
 
-            {/* Sign In Link */}
+            {/* Sign In (Secondary Action) */}
             <button
               type="button"
-              className="text-[14px] font-normal text-text-secondary hover:text-text-primary px-3 py-1.5 transition-colors cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded-md"
+              className="text-[14px] font-normal text-text-secondary hover:text-text-primary px-3 py-2 rounded-lg transition-colors cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent"
             >
               Sign In
             </button>
 
             {/* Primary Navbar CTA: Exactly "Find a Security Professional" */}
-            <a href="#security-professionals">
+            <a href="#security-professionals" className="shrink-0">
               <Button
                 variant="primary"
                 size="sm"
                 icon={<ArrowUpRight className="w-3.5 h-3.5" />}
+                className="whitespace-nowrap text-[14px] font-medium"
               >
                 Find a Security Professional
               </Button>
             </a>
           </div>
 
-          {/* Mobile Right Controls: Theme Toggle & Hamburger */}
-          <div className="flex sm:hidden items-center gap-2.5">
+          {/* Mobile/Tablet Controls: Theme Toggle & Hamburger */}
+          <div className="flex xl:hidden items-center gap-2.5">
             <button
               type="button"
               onClick={toggleTheme}
@@ -158,14 +163,14 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Navigation Drawer */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-3 rounded-2xl bg-background-surface/98 border border-border-card p-6 shadow-2xl backdrop-blur-2xl animate-in fade-in slide-in-from-top-4 duration-300">
-            <ul className="flex flex-col gap-4 pb-5 border-b border-border-subtle text-[16px] font-normal text-text-secondary">
+          <div className="xl:hidden mt-3.5 rounded-2xl bg-background-surface/98 border border-border-card p-6 shadow-2xl backdrop-blur-2xl animate-in fade-in slide-in-from-top-4 duration-300">
+            <ul className="flex flex-col gap-3 pb-5 border-b border-border-subtle text-[16px] font-normal text-text-secondary">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-1 hover:text-accent transition-colors"
+                    className="block py-1.5 hover:text-accent transition-colors"
                   >
                     {link.label}
                   </a>
