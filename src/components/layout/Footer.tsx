@@ -8,13 +8,13 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative border-t border-white/[0.06] bg-[#07090C] pt-16 pb-12 text-sm">
+    <footer className="relative border-t border-border-subtle bg-background-secondary/70 dark:bg-[#07090C] pt-16 pb-12 text-sm">
       <Container size="lg">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-white/[0.06]">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-border-subtle">
           {/* Brand Column */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-white/[0.04] border border-white/10">
+              <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-black/[0.04] dark:bg-white/[0.04] border border-border-subtle">
                 <Shield className="w-3.5 h-3.5 text-accent stroke-[1.5]" />
               </div>
               <span className="text-base tracking-[0.2em] font-normal text-text-primary">
@@ -22,8 +22,8 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-text-secondary font-light text-xs sm:text-sm max-w-sm leading-relaxed">
-              Professional travel protection and situational safety in India. Connecting
-              discerning travelers with verified, professionally trained personnel for mindful,
+              Professional travel support and situational safety in India. Connecting
+              discerning travelers with verified, professionally trained security professionals for mindful,
               unburdened exploration.
             </p>
             <div className="text-[11px] text-text-muted font-light tracking-wide pt-1">
@@ -38,8 +38,8 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-text-secondary font-light text-xs sm:text-sm">
               <li>
-                <a href="#protection" className="hover:text-text-primary transition-colors">
-                  Protection Services
+                <a href="#security-professionals" className="hover:text-text-primary transition-colors">
+                  Our Security Professionals
                 </a>
               </li>
               <li>
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#vetting" className="hover:text-text-primary transition-colors">
+                <a href="#security-professionals" className="hover:text-text-primary transition-colors">
                   Personnel Standards
                 </a>
               </li>
@@ -115,13 +115,13 @@ export const Footer: React.FC = () => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-light text-text-muted">
           <p>
             © {new Date().getFullYear()} Sentinel Technologies. All rights reserved. Professional
-            protective services complement civil and emergency response frameworks.
+            travel support services complement civil and emergency response frameworks.
           </p>
 
           <button
             type="button"
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-text-secondary hover:text-white transition-colors cursor-pointer py-1 px-2 rounded hover:bg-white/[0.04]"
+            className="flex items-center gap-1.5 text-text-secondary hover:text-text-primary transition-colors cursor-pointer py-1 px-2 rounded hover:bg-black/[0.04] dark:hover:bg-white/[0.04]"
             aria-label="Back to top"
           >
             <span>Back to top</span>

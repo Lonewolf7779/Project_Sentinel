@@ -26,8 +26,8 @@ export const HowItWorks: React.FC = () => {
     {
       num: '02',
       icon: SlidersHorizontal,
-      title: 'Choose the protection that fits your needs',
-      summary: 'Select verified male or female specialists matching your context.',
+      title: 'Choose your Security Professional',
+      summary: 'Select verified male or female security professionals matching your needs.',
       details:
         'Choose accompaniment profiles aligned with your itinerary—from discreet city walking accompaniment in crowded markets to specialized long-distance transit coordination.',
     },
@@ -37,7 +37,7 @@ export const HowItWorks: React.FC = () => {
       title: 'Travel with professional support',
       summary: 'Explore freely with quiet, verified accompaniment.',
       details:
-        'Meet your specialist at your hotel lobby, transit terminal, or designated safe zone. Experience India with unburdened curiosity while situational awareness is maintained.',
+        'Meet your security professional at your hotel lobby, transit terminal, or designated safe zone. Experience India with unburdened curiosity while situational awareness is maintained.',
     },
   ];
 
@@ -45,10 +45,10 @@ export const HowItWorks: React.FC = () => {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="relative py-28 sm:py-36 border-t border-white/[0.06] bg-[#07090D] overflow-hidden opacity-0"
+      className="relative py-28 sm:py-36 border-t border-border-subtle bg-background-secondary/50 overflow-hidden opacity-0"
     >
       {/* Background connecting light curve */}
-      <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent/15 to-transparent hidden lg:block -translate-y-12 pointer-events-none" />
+      <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent/20 to-transparent hidden lg:block -translate-y-12 pointer-events-none" />
 
       <Container size="lg">
         {/* Section Header */}
@@ -59,7 +59,7 @@ export const HowItWorks: React.FC = () => {
           </h2>
           <p className="text-base font-light text-text-secondary leading-relaxed">
             Designed for simplicity and peace of mind. A streamlined three-step workflow ensures
-            calm, verified protection without complicated logistics.
+            calm, verified travel support without complicated logistics.
           </p>
         </div>
 
@@ -74,22 +74,22 @@ export const HowItWorks: React.FC = () => {
               <div key={step.num} className="step-card flex flex-col">
                 <Card className="h-full flex flex-col justify-between p-8 group relative overflow-hidden">
                   {/* Step Watermark Number */}
-                  <span className="absolute -top-3 -right-2 text-7xl font-light text-white/[0.02] group-hover:text-accent/[0.06] transition-colors select-none">
+                  <span className="absolute -top-3 -right-2 text-7xl font-light text-black/[0.04] dark:text-white/[0.02] group-hover:text-accent/[0.08] transition-colors select-none">
                     {step.num}
                   </span>
 
                   <div>
                     {/* Header with Icon and Step Tag */}
                     <div className="flex items-center justify-between mb-8">
-                      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/[0.03] border border-white/10 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-black/[0.03] dark:bg-white/[0.03] border border-border-subtle group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
                         <Icon className="w-5 h-5 text-accent" strokeWidth={1.5} />
                       </div>
-                      <span className="px-2.5 py-1 rounded-full text-xs font-light text-text-muted bg-white/[0.03] border border-white/5">
+                      <span className="px-2.5 py-1 rounded-full text-xs font-light text-text-muted bg-black/[0.03] dark:bg-white/[0.03] border border-border-subtle">
                         Step {step.num}
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-medium text-text-primary mb-2 group-hover:text-white transition-colors">
+                    <h3 className="text-lg font-medium text-text-primary mb-2 group-hover:text-accent transition-colors">
                       {step.title}
                     </h3>
 
@@ -103,7 +103,7 @@ export const HowItWorks: React.FC = () => {
                   </div>
 
                   {/* Visual Indicator of Connection */}
-                  <div className="pt-6 mt-6 border-t border-white/[0.04] flex items-center justify-between text-xs text-text-muted font-light">
+                  <div className="pt-6 mt-6 border-t border-border-subtle flex items-center justify-between text-xs text-text-muted font-light">
                     <span>Phase Flow</span>
                     <span className="flex items-center gap-1 text-accent group-hover:translate-x-1 transition-transform">
                       {idx < 2 ? (

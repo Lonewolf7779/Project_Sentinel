@@ -22,17 +22,17 @@ export const Button: React.FC<ButtonProps> = ({
 
   const sizeStyles = {
     sm: 'text-xs px-4 py-2 gap-1.5 min-h-[36px]',
-    md: 'text-sm px-6 py-3 gap-2 min-h-[44px]',
+    md: 'text-sm px-6 py-2.5 gap-2 min-h-[42px]',
     lg: 'text-sm sm:text-base px-8 py-3.5 gap-2.5 min-h-[50px]',
   };
 
   const variantStyles = {
     primary:
-      'bg-accent text-background-deeper font-medium shadow-[0_0_20px_-3px_rgba(56,189,248,0.35)] hover:bg-[#7dd3fc] hover:shadow-[0_0_25px_0px_rgba(56,189,248,0.5)] border border-transparent',
+      'bg-accent text-white dark:text-background-deeper font-medium shadow-[0_2px_14px_rgba(2,132,199,0.35)] dark:shadow-[0_0_20px_-3px_rgba(56,189,248,0.35)] hover:bg-accent-hover dark:hover:bg-[#7dd3fc] hover:shadow-[0_4px_20px_rgba(2,132,199,0.45)] dark:hover:shadow-[0_0_25px_0px_rgba(56,189,248,0.5)] border border-transparent',
     secondary:
-      'bg-white/[0.04] text-text-primary border border-white/10 hover:bg-white/[0.08] hover:border-white/20 hover:text-white backdrop-blur-md',
+      'bg-black/[0.04] dark:bg-white/[0.04] text-text-primary border border-border-subtle hover:bg-black/[0.08] dark:hover:bg-white/[0.08] hover:border-border-light backdrop-blur-md',
     ghost:
-      'bg-transparent text-text-secondary hover:text-text-primary hover:bg-white/[0.04]',
+      'bg-transparent text-text-secondary hover:text-text-primary hover:bg-black/[0.04] dark:hover:bg-white/[0.04]',
     outline:
       'bg-transparent text-text-primary border border-accent/40 hover:border-accent hover:bg-accent/5',
   };

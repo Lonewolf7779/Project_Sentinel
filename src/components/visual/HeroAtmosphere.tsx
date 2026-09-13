@@ -3,14 +3,14 @@ import React from 'react';
 export const HeroAtmosphere: React.FC = () => {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden select-none -z-10">
-      {/* Subtle radial ambient gradients */}
-      <div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-[#38BDF8]/[0.07] via-[#0E1522]/[0.1] to-transparent rounded-full blur-3xl" />
-      <div className="absolute top-[30%] -right-[15%] w-[600px] h-[450px] bg-gradient-to-b from-[#1E293B]/[0.2] to-transparent rounded-full blur-3xl" />
-      <div className="absolute top-[40%] -left-[10%] w-[500px] h-[400px] bg-gradient-to-b from-[#38BDF8]/[0.03] to-transparent rounded-full blur-3xl" />
+      {/* Subtle radial ambient gradients - adapts to theme */}
+      <div className="absolute -top-[20%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-sky-400/[0.08] dark:from-[#38BDF8]/[0.07] via-sky-200/[0.04] dark:via-[#0E1522]/[0.1] to-transparent rounded-full blur-3xl" />
+      <div className="absolute top-[30%] -right-[15%] w-[600px] h-[450px] bg-gradient-to-b from-slate-200/[0.4] dark:from-[#1E293B]/[0.2] to-transparent rounded-full blur-3xl" />
+      <div className="absolute top-[40%] -left-[10%] w-[500px] h-[400px] bg-gradient-to-b from-sky-300/[0.06] dark:from-[#38BDF8]/[0.03] to-transparent rounded-full blur-3xl" />
 
       {/* Subtle geometric architectural grid pattern */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-[0.03] stroke-white"
+        className="absolute inset-0 w-full h-full opacity-[0.035] dark:opacity-[0.03] stroke-slate-900 dark:stroke-white"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>

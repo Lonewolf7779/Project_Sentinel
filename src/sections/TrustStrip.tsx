@@ -36,7 +36,7 @@ export const TrustStrip: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-12 border-y border-white/[0.06] bg-[#0A0D12]/70 backdrop-blur-md opacity-0"
+      className="relative py-12 border-y border-border-subtle bg-background-surface/70 backdrop-blur-md opacity-0"
     >
       <Container size="lg">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -47,7 +47,7 @@ export const TrustStrip: React.FC = () => {
                 key={item.title}
                 className="flex items-start gap-4 group p-2 rounded-xl transition-colors duration-200"
               >
-                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/[0.03] border border-white/10 group-hover:border-accent/40 group-hover:bg-accent/[0.05] transition-all duration-300 shrink-0">
+                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-black/[0.03] dark:bg-white/[0.03] border border-border-subtle group-hover:border-accent/40 group-hover:bg-accent/[0.05] transition-all duration-300 shrink-0">
                   <Icon className="w-5 h-5 text-accent/80 group-hover:text-accent transition-colors" strokeWidth={1.5} />
                 </div>
                 <div className="space-y-1">

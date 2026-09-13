@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -13,32 +14,32 @@ export default {
         light: '300',
         normal: '400',
         medium: '500',
-        // Deliberately omit bold weights to enforce typography rules
+        // Strictly omit bold weights to enforce typography rules
       },
       colors: {
         background: {
-          DEFAULT: '#090B0E',
-          deeper: '#060709',
-          surface: '#11151C',
-          elevated: '#171D26',
-          highlight: '#202834',
+          DEFAULT: 'var(--bg-primary)',
+          deeper: 'var(--bg-secondary)',
+          surface: 'var(--bg-surface)',
+          elevated: 'var(--bg-elevated)',
+          highlight: 'var(--bg-highlight)',
         },
         border: {
-          subtle: 'rgba(255, 255, 255, 0.07)',
-          light: 'rgba(255, 255, 255, 0.12)',
-          accent: 'rgba(56, 189, 248, 0.3)',
+          subtle: 'var(--border-subtle)',
+          light: 'var(--border-light)',
+          accent: 'var(--border-accent)',
         },
         text: {
-          primary: '#F3F5F7',
-          secondary: '#94A3B8',
-          muted: '#64748B',
-          accent: '#38BDF8',
+          primary: 'var(--text-primary)',
+          secondary: 'var(--text-secondary)',
+          muted: 'var(--text-muted)',
+          accent: 'var(--text-accent)',
         },
         accent: {
-          DEFAULT: '#38BDF8',
-          hover: '#60A5FA',
-          soft: 'rgba(56, 189, 248, 0.1)',
-          glow: 'rgba(56, 189, 248, 0.2)',
+          DEFAULT: 'var(--accent)',
+          hover: 'var(--accent-hover)',
+          soft: 'var(--accent-soft)',
+          glow: 'var(--accent-glow)',
         },
       },
       letterSpacing: {
@@ -46,9 +47,9 @@ export default {
         relaxed: '0.04em',
       },
       boxShadow: {
-        'subtle': '0 4px 20px -2px rgba(0, 0, 0, 0.5)',
-        'card': '0 10px 30px -10px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.05)',
-        'glow': '0 0 40px -10px rgba(56, 189, 248, 0.15)',
+        'subtle': '0 4px 20px -2px rgba(0, 0, 0, 0.08)',
+        'card': 'var(--shadow-card)',
+        'glow': 'var(--shadow-glow)',
       },
     },
   },

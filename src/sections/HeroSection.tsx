@@ -56,7 +56,7 @@ export const HeroSection: React.FC = () => {
             {/* Cinematic Lightweight Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-[-0.03em] leading-[1.12] text-text-primary">
               <span ref={line1Ref} className="block opacity-0">
-                Professional protection
+                Professional travel support
               </span>
               <span
                 ref={line2Ref}
@@ -71,8 +71,8 @@ export const HeroSection: React.FC = () => {
               ref={descriptionRef}
               className="text-base sm:text-lg font-light text-text-secondary leading-relaxed max-w-xl opacity-0"
             >
-              Travel freely with access to verified, professionally trained protection
-              personnel who accompany you and help you navigate unfamiliar environments with
+              Travel freely with access to verified, professionally trained security
+              professionals who accompany you and help you navigate unfamiliar environments with
               greater confidence and uncompromised peace of mind.
             </p>
 
@@ -81,13 +81,13 @@ export const HeroSection: React.FC = () => {
               ref={ctasRef}
               className="flex flex-wrap items-center gap-4 pt-2 opacity-0"
             >
-              <a href="#protection">
+              <a href="#security-professionals">
                 <Button
                   variant="primary"
                   size="lg"
                   icon={<ArrowUpRight className="w-4 h-4" />}
                 >
-                  Find Protection
+                  Find a Security Professional
                 </Button>
               </a>
               <a href="#how-it-works">
@@ -105,20 +105,20 @@ export const HeroSection: React.FC = () => {
             {/* Discrete Micro Trust Indicator */}
             <div
               ref={ambientBadgeRef}
-              className="pt-6 border-t border-white/[0.06] flex items-center gap-6 text-xs text-text-muted font-light opacity-0"
+              className="pt-6 border-t border-border-subtle flex items-center gap-6 text-xs text-text-muted font-light opacity-0"
             >
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-accent" />
                 <span>Strict De-escalation Standards</span>
               </div>
-              <div className="h-3 w-[1px] bg-white/10" />
+              <div className="h-3 w-[1px] bg-border-subtle" />
               <div>
-                <span>Male & Female Verified Personnel</span>
+                <span>Male & Female Security Professionals</span>
               </div>
             </div>
           </div>
 
-          {/* Right Hero Visual: Freedom & Protection */}
+          {/* Right Hero Visual: Freedom & Security */}
           <div ref={visualRef} className="lg:col-span-6 xl:col-span-6 opacity-0">
             <TravelerProtectionScene />
           </div>

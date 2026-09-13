@@ -27,7 +27,7 @@ export const WhySentinel: React.FC = () => {
       title: 'Verified Personnel',
       tagline: 'Strict multi-layer vetting',
       description:
-        'Every protection specialist is thoroughly vetted with identity checks, civil record verifications, and character assessment before joining the Sentinel network.',
+        'Every security professional is thoroughly vetted with identity checks, civil record verifications, and character assessment before joining the Sentinel network.',
     },
     {
       icon: Sparkles,
@@ -83,15 +83,15 @@ export const WhySentinel: React.FC = () => {
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/[0.04] border border-white/10 group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
-                      <Icon className="w-6 h-6 text-accent/90 group-hover:text-accent transition-colors" strokeWidth={1.5} />
+                    <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-black/[0.03] dark:bg-white/[0.04] border border-border-subtle group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-300">
+                      <Icon className="w-6 h-6 text-accent group-hover:text-accent transition-colors" strokeWidth={1.5} />
                     </div>
                     <span className="text-xs font-light text-text-muted tracking-widest uppercase">
                       0{index + 1}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-normal text-text-primary tracking-wide mb-2 group-hover:text-white transition-colors">
+                  <h3 className="text-xl font-normal text-text-primary tracking-wide mb-2 group-hover:text-accent transition-colors">
                     {item.title}
                   </h3>
                   <div className="text-xs uppercase tracking-wider text-accent font-light mb-4">
@@ -102,9 +102,9 @@ export const WhySentinel: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-white/[0.04] flex items-center justify-between text-xs text-text-muted font-light">
+                <div className="pt-6 mt-6 border-t border-border-subtle flex items-center justify-between text-xs text-text-muted font-light">
                   <span>Standard of Care</span>
-                  <span className="text-accent/80 font-normal">Active Protocol</span>
+                  <span className="text-accent font-normal">Active Protocol</span>
                 </div>
               </Card>
             );

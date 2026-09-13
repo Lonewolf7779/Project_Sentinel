@@ -50,7 +50,7 @@ export const SafetyIntelligence: React.FC = () => {
           
           {/* Left: Narrative & Conceptual Preview */}
           <div className="lg:col-span-5 space-y-6">
-            <Badge variant="accent">SITUATIONAL INTELLIGENCE</Badge>
+            <Badge variant="accent">SAFETY INTELLIGENCE</Badge>
             
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-text-primary tracking-tight leading-tight">
               Know your surroundings{' '}
@@ -71,7 +71,7 @@ export const SafetyIntelligence: React.FC = () => {
                 return (
                   <div
                     key={item.title}
-                    className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-accent/20 transition-colors"
+                    className="p-4 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-border-subtle hover:border-accent/30 transition-colors"
                   >
                     <div className="flex items-center gap-2.5 mb-2">
                       <Icon className="w-4 h-4 text-accent" strokeWidth={1.5} />
