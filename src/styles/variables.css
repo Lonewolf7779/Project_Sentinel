@@ -8,29 +8,33 @@
   --bg-highlight: #E2E8F0;
 
   /* Typography */
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
+  --text-primary: #0A0F1D;
+  --text-secondary: #334155;
   --text-muted: #64748B;
   --text-accent: #0284C7;
 
   /* Borders */
-  --border-subtle: rgba(15, 23, 42, 0.08);
-  --border-light: rgba(15, 23, 42, 0.14);
-  --border-accent: rgba(2, 132, 199, 0.3);
+  --border-subtle: rgba(15, 23, 42, 0.09);
+  --border-light: rgba(15, 23, 42, 0.15);
+  --border-card: rgba(2, 132, 199, 0.16);
+  --border-card-hover: rgba(2, 132, 199, 0.55);
+  --border-accent: rgba(2, 132, 199, 0.35);
 
-  /* Accent - Sentinel Blue */
+  /* Accent - Sentinel Blue (High visibility & contrast in light mode) */
   --accent: #0284C7;
   --accent-hover: #0369A1;
-  --accent-soft: rgba(2, 132, 199, 0.08);
+  --accent-light: #38BDF8;
+  --accent-soft: rgba(2, 132, 199, 0.09);
   --accent-glow: rgba(2, 132, 199, 0.18);
 
   /* Shadows */
-  --shadow-card: 0 4px 24px -2px rgba(15, 23, 42, 0.06), 0 0 1px 1px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 4px 24px -2px rgba(15, 23, 42, 0.05), 0 0 1px 1px rgba(2, 132, 199, 0.08);
+  --shadow-card-hover: 0 16px 36px -4px rgba(2, 132, 199, 0.12), 0 0 1px 1px rgba(2, 132, 199, 0.25);
   --shadow-glow: 0 0 35px -5px rgba(2, 132, 199, 0.15);
 
   /* Nav Scrolled */
-  --nav-bg-scrolled: rgba(255, 255, 255, 0.88);
-  --card-bg-glass: rgba(255, 255, 255, 0.85);
+  --nav-bg-scrolled: rgba(255, 255, 255, 0.92);
+  --card-bg-glass: rgba(255, 255, 255, 0.90);
 
   /* Fonts & Weights */
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -58,21 +62,25 @@
   --text-accent: #38BDF8;
 
   /* Borders */
-  --border-subtle: rgba(255, 255, 255, 0.07);
-  --border-light: rgba(255, 255, 255, 0.12);
-  --border-accent: rgba(56, 189, 248, 0.25);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.14);
+  --border-card: rgba(56, 189, 248, 0.18);
+  --border-card-hover: rgba(56, 189, 248, 0.6);
+  --border-accent: rgba(56, 189, 248, 0.3);
 
   /* Accent - Sentinel Electric Cyan */
   --accent: #38BDF8;
   --accent-hover: #7DD3FC;
-  --accent-soft: rgba(56, 189, 248, 0.08);
-  --accent-glow: rgba(56, 189, 248, 0.18);
+  --accent-light: #BAE6FD;
+  --accent-soft: rgba(56, 189, 248, 0.1);
+  --accent-glow: rgba(56, 189, 248, 0.22);
 
   /* Shadows */
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.05);
-  --shadow-glow: 0 0 40px -10px rgba(56, 189, 248, 0.15);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(56, 189, 248, 0.1);
+  --shadow-card-hover: 0 18px 40px -8px rgba(0, 0, 0, 0.75), 0 0 1px 1px rgba(56, 189, 248, 0.3);
+  --shadow-glow: 0 0 40px -10px rgba(56, 189, 248, 0.18);
 
   /* Nav Scrolled */
-  --nav-bg-scrolled: rgba(9, 11, 14, 0.88);
-  --card-bg-glass: rgba(18, 23, 32, 0.65);
+  --nav-bg-scrolled: rgba(9, 11, 14, 0.92);
+  --card-bg-glass: rgba(18, 23, 32, 0.72);
 }

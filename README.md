@@ -1,8 +1,8 @@
 # PROJECT SENTINEL
 
-> **Professional protection for every journey.**
+> **Professional security support for every journey.**
 
-Project Sentinel is a professional tourist safety and protection platform designed initially for India. It connects foreign tourists, domestic travelers, solo visitors, female travelers, and families with verified, professionally trained protection personnel.
+Project Sentinel is a professional tourist safety and travel support platform designed initially for India. It connects foreign tourists, domestic travelers, solo visitors, female travelers, and families with verified, professionally trained security professionals.
 
 Sentinel is built around **prevention, situational awareness, safe travel, de-escalation, and professional presence**—not vigilante actions, confrontation, or intimidation.
 

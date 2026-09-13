@@ -27,6 +27,8 @@ export default {
         border: {
           subtle: 'var(--border-subtle)',
           light: 'var(--border-light)',
+          card: 'var(--border-card)',
+          'card-hover': 'var(--border-card-hover)',
           accent: 'var(--border-accent)',
         },
         text: {
@@ -49,6 +51,7 @@ export default {
       boxShadow: {
         'subtle': '0 4px 20px -2px rgba(0, 0, 0, 0.08)',
         'card': 'var(--shadow-card)',
+        'card-hover': 'var(--shadow-card-hover)',
         'glow': 'var(--shadow-glow)',
       },
     },
